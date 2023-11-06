@@ -17,7 +17,7 @@ const Home = () => {
       <h2>Home</h2>
       <div>
         {
-          jobData?.map(e => e.jobTitle)
+          jobData?.map(e => <p>{e.jobTitle}</p>)
         }
       </div>
     </div>
