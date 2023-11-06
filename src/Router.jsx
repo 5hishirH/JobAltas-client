@@ -4,6 +4,7 @@ import ErrorEle from "./Pages/ErrorEle"
 import Home from "./Pages/Home";
 import Login from "./Pages/Login";
 import Registration from "./Pages/Registration";
+import AddJobs from "./Pages/AddJobs";
 
 const Router = createBrowserRouter([
     {
@@ -22,6 +23,10 @@ const Router = createBrowserRouter([
             {
                 path: '/register',
                 element: <Registration></Registration>
+            },
+            {
+                path: '/addJobs',
+                element: <AddJobs></AddJobs>
             }
         ]
     }
