@@ -23,11 +23,13 @@ const AddJobs = () => {
     const salaryLowerLimit = e.target.salaryL.value;
     const salaryUpperLimit = e.target.salaryU.value;
     const applicantNumber = e.target.applicants.value;
+    const email = user?.email;
 
     const jobData = {
       jobTitle,
       jobBannerURL,
       jobPoster,
+      email,
       jobInfo,
       jobType,
       salaryRange: [salaryLowerLimit, salaryUpperLimit],
