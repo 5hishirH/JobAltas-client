@@ -26,6 +26,7 @@ export const AuthProvider = ({ children }) => {
   const handleSignInWithEmailAndPassword = (email, password) =>
     signInWithEmailAndPassword(auth, email, password);
 
+  // sign out
   const handleSignOut = () => {
     setLoading(true);
     return signOut(auth);

@@ -1,12 +1,13 @@
 import React, { useState } from "react";
 import useAuthContext from "../Providers/AuthProvider";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 
 const Login = () => {
   const [showPass, setShowPass] = useState(false);
 
+  const location = useLocation();
   const navigate = useNavigate();
   const { handleSignInWithEmailAndPassword } = useAuthContext();
 
@@ -21,7 +22,7 @@ const Login = () => {
         const user = userCredential.user;
         console.log(user);
         // ...
-        navigate("/");
+        navigate(location?.state ? location?.state : '/');
         Swal.fire({
           icon: "success",
           title: "Login Successfull",

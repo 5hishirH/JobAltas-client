@@ -14,7 +14,7 @@ const Home = () => {
 
   return (
     <div>
-      <h2>Home</h2>
+      <h2 className="text-2xl font-semibold">Home Page</h2>
       <div>
         {
           jobData?.map(e => <p>{e.jobTitle}</p>)

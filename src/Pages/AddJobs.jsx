@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import useAuthContext from "../Providers/AuthProvider";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
-import "../customDatePickerWidth.css";
 import useAxiosCustom from "../Hooks/useAxiosCustom";
+import Swal from "sweetalert2";
 
 const AddJobs = () => {
   const axiosCustom = useAxiosCustom();
@@ -40,7 +40,11 @@ const AddJobs = () => {
     // console.log("Deadline is greater than postdate", jobData.deadline > jobData.postDate);
 
     axiosCustom.post("/jobs", jobData)
-    .then( res => console.log('POST request was successful', res.data))
+    .then( res => Swal.fire({
+      title: "Job Added Successfully",
+      text: "",
+      icon: "success"
+    }))
     .catch( err => console.log(err))
   };
 
