@@ -31,6 +31,7 @@ const Navbar = () => {
   return (
     <div className="flex gap-4 items-center">
       <Link to={"/"}>Home</Link>
+      <Link to={"/allJobs"}>All Jobs</Link>
       <Link to={"/AddJobs"}>Add jobs</Link>
       <Link to={"/myJobs"}>My jobs</Link>
       <div>{user?.displayName}</div>
