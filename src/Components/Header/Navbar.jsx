@@ -34,6 +34,7 @@ const Navbar = () => {
       <Link to={"/allJobs"}>All Jobs</Link>
       <Link to={"/AddJobs"}>Add jobs</Link>
       <Link to={"/myJobs"}>My jobs</Link>
+      <Link to={"/appliedJobs"}>Applied Jobs</Link>
       <div>{user?.displayName}</div>
       <button onClick={handleLogOut} className="btn btn-warning btn-sm">
         Logout
