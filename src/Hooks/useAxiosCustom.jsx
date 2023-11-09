@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const axiosCustom = axios.create({
-    baseURL: 'http://localhost:5000',
+    baseURL: 'https://job-atlas-server.vercel.app',
 })
 
 const useAxiosCustom = () => {
