@@ -10,7 +10,8 @@ export default {
         "regal-blue": "#243c5a",
         "prime": "#29648A",
         "sec": "#2E8CCA",
-        "tert": "#AAABBB"
+        "tert": "#51a488",
+        "bute": "#022140"
       },
     },
   },

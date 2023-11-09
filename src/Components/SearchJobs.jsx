@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
-const SearchJobs = ({jobData}) => {
+const Search = ({jobData}) => {
   const [searchResult, setSearchResult] = useState([]);
   const [resultVisibility, setResultVisibility] = useState(false);
 
@@ -67,4 +67,4 @@ const SearchJobs = ({jobData}) => {
   );
 };
 
-export default SearchJobs;
+export default Search;

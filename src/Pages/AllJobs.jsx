@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import useAxiosCustom from "../Hooks/useAxiosCustom";
 import { Link } from "react-router-dom";
-import SearchJobs from "../Components/SearchJobs";
+import Search from "../Components/SearchJobs";
 
 const AllJobs = () => {
   const axiosCustom = useAxiosCustom();
@@ -21,7 +21,7 @@ const AllJobs = () => {
   return (
     <div className="w-fit mx-auto mt-16">
       {/* search system */}
-      <SearchJobs jobData={jobData}></SearchJobs>
+      <Search jobData={jobData}></Search>
       <div>
         {jobData?.map((e) => (
           <div className="flex gap-4 items-center mt-4">
