@@ -32,7 +32,7 @@ const Navbar = () => {
 
   const handleHover = (e) => {
     setHoverEffect(e);
-  }
+  };
   return (
     <div className="flex items-center justify-between bg-bute text-white px-12 py-4">
       <div className="flex gap-16 items-center">
@@ -108,17 +108,31 @@ const Navbar = () => {
           ) : (
             ""
           )}
+          <NavLink
+            to={"/blogs"}
+            className={({ isActive, isPending }) =>
+              isPending ? "pending" : isActive ? "text-tert font-extrabold" : ""
+            }
+          >
+            Blog
+          </NavLink>
         </div>
       </div>
       <div>
         {user ? (
           <div className="flex gap-4 items-center">
             <div className="h-10 bg-white border-2 border-tert rounded-full relative">
-              <div onMouseOver={() => handleHover(true)} onMouseLeave={() => handleHover(false)} className="overflow-hidden h-full">
+              <div
+                onMouseOver={() => handleHover(true)}
+                onMouseLeave={() => handleHover(false)}
+                className="overflow-hidden h-full"
+              >
                 <img src={user?.photoURL} alt="" className="h-full w-full" />
               </div>
               <div
-                className={`top-12 left-1/2 -translate-x-1/2 absolute bg-white text-black font-medium px-2 py-1 rounded-md border-2 border-bute ${hoverEffect ? 'visible' : 'invisible'}`}
+                className={`top-12 left-1/2 -translate-x-1/2 absolute bg-white text-black font-medium px-2 py-1 rounded-md border-2 border-bute ${
+                  hoverEffect ? "visible" : "invisible"
+                }`}
               >
                 {user?.displayName}
               </div>
