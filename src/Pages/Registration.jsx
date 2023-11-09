@@ -8,7 +8,8 @@ const Registration = () => {
   const [showPass, setShowPass] = useState(false);
 
   const navigate = useNavigate();
-  const { handleCreateUserWithEmailAndPassword, handleUpdateProfile } = useAuthContext();
+  const { handleCreateUserWithEmailAndPassword, handleUpdateProfile } =
+    useAuthContext();
 
   const handleRegistration = (e) => {
     e.preventDefault();
@@ -23,9 +24,9 @@ const Registration = () => {
         const user = userCredential.user;
 
         handleUpdateProfile({
-            displayName: username,
-            photoURL: imgURL
-        })
+          displayName: username,
+          photoURL: imgURL,
+        });
         // ...
         navigate("/login");
         Swal.fire({
@@ -36,14 +37,22 @@ const Registration = () => {
       .catch((error) => {
         const errorCode = error.code;
         const errorMessage = error.message;
-        console.log(errorMessage);
+        Swal.fire({
+          icon: "error",
+          title: "Oops...",
+          text: `${errorMessage}`,
+        });
       });
   };
 
   return (
     <div className="w-10/12 md:w-1/4 mx-auto">
       <div className="h-[3rem] flex justify-center mt-8">
-        <img src="https://i.ibb.co/ch1Ljgk/billing.png" alt="" className="h-full" />
+        <img
+          src="https://i.ibb.co/RPTHWyX/icons8-jobs-58.png"
+          alt=""
+          className="h-full"
+        />
       </div>
       <div className="mt-10">
         <h2 className="text-3xl font-bold text-center">Create your account</h2>
@@ -56,7 +65,7 @@ const Registration = () => {
               type="email"
               name="email"
               required
-              className="w-full border-2 border-prime outline-offset-4 outline-[#3AAFA9] p-1"
+              className="w-full border-2 border-prime outline-offset-4 outline-[#3AAFA9] p-1 rounded-md"
             />
           </div>
           <div className="mt-4">
@@ -67,18 +76,20 @@ const Registration = () => {
               type="text"
               name="user_name"
               required
-              className="w-full border-2 border-prime outline-offset-4 outline-[#3AAFA9] p-1"
+              className="w-full border-2 border-prime outline-offset-4 outline-[#3AAFA9] p-1 rounded-md"
             />
           </div>
           <div className="mt-4">
             <div>
-              <label className="font-semibold md:font-medium">Profile picture url:</label>
+              <label className="font-semibold md:font-medium">
+                Profile picture url:
+              </label>
             </div>
             <input
               type="url"
               name="profilePicture"
               defaultValue={null}
-              className="w-full border-2 border-prime outline-offset-4 outline-[#3AAFA9] p-1"
+              className="w-full border-2 border-prime outline-offset-4 outline-[#3AAFA9] p-1 rounded-md"
             />
           </div>
           <div className="mt-4">
@@ -90,7 +101,7 @@ const Registration = () => {
                 type={showPass ? "text" : "password"}
                 name="pass"
                 required
-                className="w-full border-2 border-prime outline-offset-4 outline-[#3AAFA9] p-1"
+                className="w-full border-2 border-prime outline-offset-4 outline-[#3AAFA9] p-1 rounded-md"
               />
               <span
                 onClick={() => {
@@ -110,7 +121,7 @@ const Registration = () => {
               </Link>
             </div>
             <input
-              className="mt-3 w-full py-1 bg-prime text-white font-bold cursor-pointer"
+              className="mt-3 w-full py-2 bg-prime text-white font-bold cursor-pointer rounded-md"
               type="submit"
               value="SIGN UP"
             />

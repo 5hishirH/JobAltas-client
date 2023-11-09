@@ -125,9 +125,9 @@ const Navbar = () => {
               <div
                 onMouseOver={() => handleHover(true)}
                 onMouseLeave={() => handleHover(false)}
-                className="overflow-hidden h-full"
+                className="overflow-hidden h-full w-10 rounded-full"
               >
-                <img src={user?.photoURL} alt="" className="h-full w-full" />
+                <img src={user.photoURL ? user.photoURL : 'https://i.ibb.co/GRmXjRc/icons8-avatar-96.png'} alt="" className="h-full w-full" />
               </div>
               <div
                 className={`top-12 left-1/2 -translate-x-1/2 absolute bg-white text-black font-medium px-2 py-1 rounded-md border-2 border-bute ${
