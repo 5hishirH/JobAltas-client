@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
-const Search = ({jobData}) => {
+const Search = ({ jobData }) => {
   const [searchResult, setSearchResult] = useState([]);
   const [resultVisibility, setResultVisibility] = useState(false);
 
@@ -36,26 +36,29 @@ const Search = ({jobData}) => {
       {/* main start */}
       <div className="w-1/2 relative">
         {/* search-box */}
-        <div className="join w-full">
-          <button className="btn btn-outline join-item">Search</button>
+        <div className="join w-full border-2 border-bute">
+          <button className="btn join-item">Search</button>
           <input
             id="search-box"
             type="text"
-            placeholder="Type here"
+            placeholder="Search here"
             onKeyUp={handleSearch}
-            className="input input-bordered w-full join-item placeholder:text-right"
+            className="outline-2 outline-tert outline-offset-0 w-full join-item placeholder:text-right placeholder:mr-3 px-4"
           />
         </div>
         {/* result-box */}
         <div
           id="result-box"
-          className={`border-2 border-blue-600 mt-4 px-4 py-2 rounded-md ${
+          className={`mt-4 px-4 py-2 rounded-md ${
             resultVisibility ? "" : "hidden"
-          } absolute w-full bg-white`}
+          } absolute w-full bg-white shadow-[0px_4px_16px_rgba(17,17,26,0.1),_0px_8px_24px_rgba(17,17,26,0.1),_0px_16px_56px_rgba(17,17,26,0.1)]`}
         >
           <div className="flex flex-col gap-4">
             {searchResult?.map(({ job_id, jobTitle }) => (
-              <Link to={`/jobs/${job_id}`} className="hover:bg-blue-400">
+              <Link
+                to={`/jobs/${job_id}`}
+                className="hover:bg-[#BBE1FA] hover:font-semibold px-2 py-1 rounded-md"
+              >
                 {jobTitle}
               </Link>
             ))}

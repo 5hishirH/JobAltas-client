@@ -1,7 +1,7 @@
 import React from "react";
 import Search from "./SearchJobs";
 
-const Banner = () => {
+const Banner = ({jobData}) => {
   return (
     <div
       className={`bg-[url(https://i.ibb.co/drZjY4z/hunters-race-MYbh-N8-Kaa-Ec-unsplash-1.jpg)] h-[40rem] bg-no-repeat bg-cover bg-center flex flex-col items-center justify-center`}
@@ -15,7 +15,7 @@ const Banner = () => {
           Explore new opportunities, chart your course, and conquer your career
           goals. Navigate Your Career Odyssey and set sail for success."
         </p>
-        <Search></Search>
+        <Search jobData={jobData}></Search>
       </div>
     </div>
   );
