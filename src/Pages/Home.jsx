@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import useAxiosCustom from "../Hooks/useAxiosCustom";
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import "react-tabs/style/react-tabs.css";
+import Banner from "../Components/Banner";
 
 const Home = () => {
   const axiosCustom = useAxiosCustom();
@@ -19,7 +20,7 @@ const Home = () => {
 
   return (
     <div>
-      <h2 className="text-2xl font-semibold">Home Page</h2>
+      <Banner></Banner>
       <div>
         <Tabs selectedIndex={tabIndex} onSelect={(index) => setTabIndex(index)}>
           <TabList>

@@ -1,14 +1,22 @@
-@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700;800;900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700;800;900&display=swap");
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-
 * {
-    font-family: 'Raleway', sans-serif;
+  font-family: "Raleway", sans-serif;
 }
 
 .width1 {
-    width: 100%;
+  width: 100%;
+}
+
+#bannerTitle {
+  text-shadow: 2px 7px 5px #022140,
+    0px -4px 7px #022140;
+}
+
+#bannerInfo {
+    text-shadow: 2px 2px 4px #000000;
 }
