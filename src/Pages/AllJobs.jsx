@@ -5,6 +5,9 @@ import { Link } from "react-router-dom";
 const AllJobs = () => {
   const axiosCustom = useAxiosCustom();
   const [jobData, setJobData] = useState();
+  const [searchResult, setSearchResult] = useState([]);
+  const [resultVisibility, setResultVisibility] = useState(false);
+  const [searchNav, setSearchNav] = useState();
 
   useEffect(() => {
     axiosCustom
@@ -22,32 +25,58 @@ const AllJobs = () => {
     };
   });
 
-  console.log(searchArr);
+  const searchBox = document.getElementById("search-box");
+
+  const handleSearch = () => {
+    const searchBox = document.getElementById("search-box");
+    const resultBox = document.getElementById("result-box");
+    let result = [];
+    let input = searchBox.value;
+    if (input.length) {
+      result = searchArr.filter(({ jobTitle }) =>
+        jobTitle.toLowerCase().includes(input.toLowerCase())
+      );
+    }
+    if (result.length) {
+      setResultVisibility(true);
+    } else {
+      setResultVisibility(false);
+    }
+    setSearchResult(result);
+  };
+
+  // console.log(searchArr);
   return (
     <div className="w-fit mx-auto mt-16">
       {/* search system */}
       <div className="w-full flex justify-center">
         {/* main start */}
-        <div className="w-1/2">
+        <div className="w-1/2 relative">
           {/* search-box */}
           <div className="join w-full">
+            <button className="btn btn-outline join-item">Search</button>
             <input
               id="search-box"
               type="text"
               placeholder="Type here"
-              className="input input-bordered w-full join-item"
+              onKeyUp={handleSearch}
+              className="input input-bordered w-full join-item placeholder:text-right"
             />
-            <button className="btn btn-outline join-item">Search</button>
           </div>
           {/* result-box */}
           <div
             id="result-box"
-            className="border-2 border-blue-600 mt-4 px-4 py-2 rounded-md"
+            className={`border-2 border-blue-600 mt-4 px-4 py-2 rounded-md ${
+              resultVisibility ? "" : "hidden"
+            } absolute w-full bg-white`}
           >
-            <ul>
-              <li>JavaSript</li>
-              <li>Web Development</li>
-            </ul>
+            <div className="flex flex-col gap-4">
+              {searchResult?.map(({ job_id, jobTitle }) => (
+                <Link to={`/jobs/${job_id}`} className="hover:bg-blue-400">
+                  {jobTitle}
+                </Link>
+              ))}
+            </div>
           </div>
         </div>
         {/* items end */}
