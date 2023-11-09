@@ -4,6 +4,7 @@ import "react-tabs/style/react-tabs.css";
 import Banner from "../Components/Banner";
 import HomeTabSection from "../Components/HomeTabSection";
 import FeaturedEmployer from "../Components/FeaturedEmployer";
+import About from "../Components/About";
 
 const Home = () => {
   const axiosCustom = useAxiosCustom();
@@ -23,6 +24,7 @@ const Home = () => {
       <Banner jobData={jobData}></Banner>
       <HomeTabSection jobData={jobData}></HomeTabSection>
       <FeaturedEmployer></FeaturedEmployer>
+      <About></About>
     </div>
   );
 };
