@@ -2,13 +2,13 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 
-const HomeTabSection = ({ jobData }) => {
+const HomeTabSection = ({ jobData, sectionTitle }) => {
   const [tabIndex, setTabIndex] = useState(0);
 
   return (
     <div className="w-4/5 mx-auto mt-24">
       <div>
-        <h2 className="text-4xl font-bold">Find Your Dream Job Today</h2>
+        <h2 className="text-4xl font-bold">{sectionTitle}</h2>
       </div>
       <div className="mt-10">
         <Tabs selectedIndex={tabIndex} onSelect={(index) => setTabIndex(index)}>

@@ -51,7 +51,8 @@ const AddJobs = () => {
   };
 
   return (
-    <div className="w-10/12 md:w-1/3 mx-auto my-10">
+    <div className="w-4/5 md:w-1/3 mx-auto my-10">
+      <h2 className="text-4xl font-bold my-10">Add Jobs</h2>
       <form onSubmit={handleAddJobs}>
         <div>
           <div>

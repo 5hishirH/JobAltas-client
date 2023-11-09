@@ -1,7 +1,7 @@
 # Project Feature
 
 - This is a website which conatins informations of jobs
-- The website is featured with private routing, conditional rendering   and add or delete data.
+- The website is featured with private routing, conditional rendering and add, update or delete data.
 - Language : HTML, Javascript
 - Framework : Reactjs, Tailwind, Express
 - Database : MongoDB
@@ -11,4 +11,4 @@
 
 
 ### Live Link : 
-live-link : https://fashion-and-apparel-31c61.firebaseapp.com/
+live-link : https://job-listing-website.web.app/

@@ -22,7 +22,7 @@ const Home = () => {
   return (
     <div>
       <Banner jobData={jobData}></Banner>
-      <HomeTabSection jobData={jobData}></HomeTabSection>
+      <HomeTabSection jobData={jobData} sectionTitle={'Find Your Dream Job Today'}></HomeTabSection>
       <FeaturedEmployer></FeaturedEmployer>
       <About></About>
     </div>

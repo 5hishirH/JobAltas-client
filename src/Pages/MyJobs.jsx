@@ -34,7 +34,7 @@ const MyJobs = () => {
         axiosCustom
           .delete(`/jobs/${jobId}`)
           .then(() => {
-            navigate('/myJobs')
+            navigate("/myJobs");
             Swal.fire("Job Deletion Successfull!", "", "success");
           })
           .catch((error) => console.log(error));
@@ -43,42 +43,51 @@ const MyJobs = () => {
   };
 
   return (
-    <div className="w-11/12 mx-auto my-10">
+    <div className="w-4/5 mx-auto my-10">
       <div className="flex flex-col gap-8">
         {myJobData?.map((e) => (
-          <div className="border-2 border-blue-600 p-4">
-            <h2>{e?.jobTitle}</h2>
-            <p>{e?.jobType}</p>
-            <p>{e?.jobPoster}</p>
-            <p>{e?.jobInfo}</p>
-            <p>
-              {e?.salaryRange[0]} - {e?.salaryRange[1]} BDT
-            </p>
-            <p>
-              <span>Post Date : </span>
-              <span>{e?.postDate.slice(0, 10)}</span>
-            </p>
-            <p>
-              <span>Deadline : </span>
-              <span>{e?.deadline.slice(0, 10)}</span>
-            </p>
-            <p>
-              <span>Number of applicants : </span>
-              <span>{e?.applicantNumber}</span>
-            </p>
-            <div className="flex gap-4">
-              <Link
-                to={`/updateJob/${e?._id}`}
-                className="btn btn-success btn-sm"
-              >
-                Update
-              </Link>
-              <button
-                onClick={() => handleDelete(e?._id)}
-                className="btn btn-error btn-sm"
-              >
-                Delete
-              </button>
+          <div className="shadow-[0px_4px_16px_rgba(17,17,26,0.1),_0px_8px_24px_rgba(17,17,26,0.1),_0px_16px_56px_rgba(17,17,26,0.1)] rounded-xl p-6 grid grid-cols-2 gap-10">
+            <div className="h-96 overflow-hidden rounded-xl">
+          <img
+            src={e?.jobBannerURL}
+            alt=""
+            className="object-cover h-full w-full"
+          />
+        </div>
+            <div>
+              <h2 className="text-xl font-bold">{e?.jobTitle}</h2>
+              <p>{e?.jobType}</p>
+              <p>{e?.jobPoster}</p>
+              <p>{e?.jobInfo}</p>
+              <p>
+                {e?.salaryRange[0]} - {e?.salaryRange[1]} BDT
+              </p>
+              <p>
+                <span>Post Date : </span>
+                <span>{e?.postDate.slice(0, 10)}</span>
+              </p>
+              <p>
+                <span>Deadline : </span>
+                <span>{e?.deadline.slice(0, 10)}</span>
+              </p>
+              <p>
+                <span>Number of applicants : </span>
+                <span>{e?.applicantNumber}</span>
+              </p>
+              <div className="flex gap-4 mt-4">
+                <Link
+                  to={`/updateJob/${e?._id}`}
+                  className="btn btn-success btn-sm"
+                >
+                  Update
+                </Link>
+                <button
+                  onClick={() => handleDelete(e?._id)}
+                  className="btn btn-error btn-sm"
+                >
+                  Delete
+                </button>
+              </div>
             </div>
           </div>
         ))}
